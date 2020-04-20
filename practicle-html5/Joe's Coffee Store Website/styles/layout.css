@@ -5,6 +5,11 @@ body {
     font-family: verdana;
 }
 
+@font-face {
+    font-family: headerfont;
+    src: url(../fonts/Lobster_1.3.otf);
+}
+
 header {
     font-weight: bold;
 }
@@ -30,11 +35,13 @@ header {
 }
 
 #headername {
+    font-family: headerfont;
     font-size: 40px;
     color: #603813;
     padding: 15px;
     margin: 8px 0px;
     font-weight: bold;
+    text-shadow: 5px 5px 7px #5f2c17;
 }
 
 nav {
@@ -86,8 +93,11 @@ nav {
     float: right;
     width: 300px;
     margin-top: 20px;
-
 }
+
+    #coffeeofthemonth > img {
+        margin-left: 35px;
+    }
 
 #welcometext {
     float: left;
@@ -95,6 +105,8 @@ nav {
     font-size: 12px;
     margin-top: 20px;
     margin-bottom: 20px;
+    column-count: 2;
+    -webkit-colunm-count: 2;
 }
 
     #welcometext > header {
@@ -210,6 +222,7 @@ nav {
     color: #f3f3f3;
     font-size: 0.8em;
     width: 80px;
+    height: 15px;
 }
     
     .addtocartbutton:hover, .addtocartbutton:focus {
@@ -256,7 +269,7 @@ footer {
 }
 
 .productarticlewidedescription {
-    text-wrap: normal;
+    word-wrap: normal;
 }
 
 .productarticlewidename {
@@ -308,7 +321,7 @@ footer {
 }
 
 .productarticledescription {
-    text-wrap: normal;
+    word-wrap: normal;
 }
 
 .productarticleprice {
