@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Coffee Details</title>
+        <title>Checkout | Joe's Coffee Store</title>
+
+        <link href="styles\layout.css" rel="stylesheet" />
+        <script src="scripts/videoplayer.js"></script>
     </head>
     <body>
         <header>
@@ -10,9 +13,28 @@
                     <img src="images/logo.png" />
                 </a>
                 <span id="headername">Joe's Coffe Store</span>
+                <input type="search" class="searchbox" placeholder="Search our store" />
             </div>
+            <nav class="backgroundgradient">
+                <ul>
+                    <li><a class="navlink" href="index.html">Home</a></li>
+                    <li><a class="navlink" href="blog.html">Blog</a></li>
+                    <li><a class="navlink" href="allcoffees.html">Our coffees</a></li>
+                    <li><a class="navlink" href="accessories.html">Accessories</a></li>
+                    <li><a class="navlink" href="Gifts.html">Gifts</a></li>
+                    <li><a class="navlink" href="findus.html">Find us</a></li>
+                    <li><a class="navlink" href="checkout.html">Checkout</a></li>
+    
+                </ul>
+            </nav>
         </header>
 
+        <div id="welcomeimage">
+            <img src="images/coffeeheader.jpg" />
+        </div>
+        <div id="coffeeofthemonth">
+            <img src="images/cotm.jpg" />
+        </div>
         <section class="coffeedetails">
             <header class="blockheader">
                 <span>Coffee 1</span>
@@ -22,21 +44,51 @@
                 <figcaption>Coffee 1</figcaption>
             </figure>
             <div class="productarticlecontent">
-                <p class="productarticledescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. In iaculis nunc sed augue lacus 
-                    viverra. Sem integer vitae justo eget magna. Morbi enim nunc faucibus a pellentesque
-                    sit amet porttitor eget. Morbi blandit cursus risus at ultrices. Nibh nisl condimentum
-                    id venenatis a condimentum. Integer malesuada nunc vel risus commodo. Est velit egestas
-                    dui id ornare arcu odio ut. Congue mauris rhoncus aenean vel elit scelerisque mauris
-                    pellentesque. Magna etiam tempor orci eu lobortis elementum nibh tellus. Aliquam id diam 
-                    maecenas ultricies mi eget mauris pharetra. Laoreet non curabitur gravida arcu 
-                    ac tortor dignissim. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. 
-                    Id volutpat lacus laoreet non curabitur gravida arcu. Lacus suspendisse faucibus interdum
-                    posuere lorem ipsum. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. 
-                    Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in. Sit amet consectetur 
-                    adipiscing elit. Dignissim convallis aenean et tortor at risus.</p>
+                <p class="productarticledescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                     Donec ut tortor non ante vehicula vehicula sed at enim. Suspendisse a odio odio. Vestibulum
+                    ac lorem nec ligula semper fermentum eu semper massa. Quisque convallis id sapien at varius.
+                    Praesent sed rhoncus ex, eget fringilla enim. Maecenas varius quam vitae ipsum sagittis sagittis.
+                    Mauris purus nunc, finibus sit amet finibus quis, posuere ut velit. Mauris consectetur nunc
+                    nec ornare scelerisque. Praesent et maximus nunc. Suspendisse nec placerat ex. Sed ut
+                    metus bibendum, pretium quam id, viverra ex. Ut rutrum lacus urna, vitae suscipit
+                    lorem eleifend ut. Nunc a risus tincidunt, blandit odio sed, ullamcorper nisi.
+                    Mauris ultrices id orci sed rhoncus. Vivamus ut velit urna. Vestibulum faucibus 
+                    ultricies risus, ut rhoncus odio mollis non. <br />Suspendisse varius bibendum suscipit.
+                    Sed metus tellus, accumsan vitae sollicitudin suscipit, vestibulum eget
+                    eros. Ut lacinia eleifend nisi, ultrices consectetur nulla facilisis vitae.
+                    Curabitur accumsan non ante accumsan gravida. Maecenas ornare magna non 
+                    lacinia sollicitudin. Phasellus tincidunt dolor at imperdiet blandit. In hac
+                    habitasse platea dictumst. Duis nec magna facilisis, mattis enim posuere,
+                    pretium ligula. Aliquam eu accumsan ante, et porta erat. Suspendisse potenti. 
+                    Donec lobortis risus quis ligula bibendum cursus. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nulla efficitur volutpat tempus. Suspendisse faucibus
+                    nec ex at maximus. Cras non libero ut ipsum interdum porta. Vivamus condimentum,
+                    nibh at porttitor placerat, metus nisl cursus orci, tempor maximus est dui
+                    bibendum ex. </p>
                 <p class="productarticleprice">&euro;10</p>
             </div>
+            <div>
+                <video width="320" height="240" class="coffeevideoplayer" id="videoplayer" poster="images/logo.png" >
+                    <source src="video/movie.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                    <source src="video/movie.ogg" type='video/ogg; codecs="theora, vorbis"' />
+                    Sadly your browser has no support for video...
+                </video>
+
+                <div id="controls">
+                    <div id="errorDiv" style="color: Red;"></div>
+                    <button id="slowerButton">Slower</button>
+                    <button id="backButton">Rewind</button>
+                    <button id="playButton">Play</button>
+                    <button id="forwardButton">Forward</button>
+                    <button id="fasterButton">Faster</button>
+                    <button id="muteButton">Mute</button>
+                    <br /><br /><br />
+                </div>
+            </div>
         </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", initializeVideoPlayerControls, false);
+        </script>
     </body>
 </html>
