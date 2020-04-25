@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instantiate Custom Elements</title>
+    </head>
+    <body>
+        <!--user-comment not displayed in browser. Why?-->
+        <user-comment></user-comment>
+
+
+        <script>
+            var UserCommentProto = Object.create(HTMLElement.prototype);
+
+            UserCommentProto.createdCallback = function(){
+                this.innerHTML = "<h2>User Comment</h2><textarea></textarea></br><input type='submit'>";
+            }
+
+            var UserComment = document.registerElement('user-comment', {
+                prototype: UserCommentProto
+            });
+        </script>
+    </body>
+</html>
+
+
+
