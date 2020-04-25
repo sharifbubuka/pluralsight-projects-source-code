@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <template id="header">
+            <div>Header</div>
+            <button id="renderBodyButton" onclick="displayBody()">Display Body</button>
+            <template id="body">
+                <div>Body</div>
+            </template>
+        </template>
+        
+    </head>
+    <body>
+        
+        <script>
+            var headtemplate = document.querySelector('#header');
+            var headerclone = document.importNode(headtemplate.content, true);
+            //Note: This only renders the header template's content
+            document.body.appendChild(headerclone);
+            console.log('Header rendered successfully'); 
+
+            var button = headerclone.querySelector('button');
+                      
+            function displayBody(){
+                var bodytemplate = document.querySelector('#body');
+                var bodyclone = document.importNode(bodytemplate.content, true);
+                //Note: This will now render the body template's content
+                
+                document.body.appendChild(bodyclone);
+                console.log('Body rendered successfully');
+                counter++; 
+            }
+
+        </script>
+
+
+    </body>
+</html>
