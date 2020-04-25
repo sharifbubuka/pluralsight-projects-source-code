@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Instantiate Custom Elements</title>
-    </head>
-    <body>
-        <!--user-comment not displayed in browser. Why?-->
-        <user-comment></user-comment>
+
+<head>
+    <title>Instantiate Custom Elements</title>
+</head>
+
+<body>
+    <!--#Option 1-->
+    <user-comment></user-comment>
 
 
-        <script>
-            var UserCommentProto = Object.create(HTMLElement.prototype);
+    <script>
+        var UserCommentProto = Object.create(HTMLElement.prototype);
 
-            UserCommentProto.createdCallback = function(){
-                this.innerHTML = "<h2>User Comment</h2><textarea></textarea></br><input type='submit'>";
-            }
+        UserCommentProto.createdCallback = function () {
+            this.innerHTML = "<h2>User Comment</h2><textarea></textarea></br><input type='submit'>";
+        }
 
-            var UserComment = document.registerElement('user-comment', {
-                prototype: UserCommentProto
-            });
-        </script>
-    </body>
+        //document.register-Element() is deprecated
+        // link to solution: https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define
+        var UserComment = customElements.define('user-comment', {
+            prototype: UserCommentProto
+        });
+
+            //#Option 2
+            //var comment = new UserComment();
+            //document.body.appendChild(comment);
+
+            //#Option 3
+            //var comment = document.createElement('user-comment');
+            //document.body.appendChild(comment);
+
+            //#Option 4
+            //document.body.innerHTML = '<user-comment />';
+    </script>
+</body>
+
 </html>
-
-
-

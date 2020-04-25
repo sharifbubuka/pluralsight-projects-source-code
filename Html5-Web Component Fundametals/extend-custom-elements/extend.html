@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Extend Custom Elements</title>
+    </head>
+    <body>
+        <button is="user-button"></button>
+
+        <script>
+            var Proto = Object.create(HTMLButtonElement.prototype);
+
+            Proto.createdCallback = function(){
+                this.innerHTML = "Click Me";
+                this.value = "Default value";
+                this.style.color = "orange";
+            }
+            
+            //registerElement() is deprecated
+           // var UserButton = document.registerElement('user-button', {
+                //prototype: Proto,
+                //extends: 'button'
+            //});
+
+            //Try solution below here
+            customElements.define('user-button', Proto, {extends: 'button'})
+        </script>
+    </body>
+</html>
