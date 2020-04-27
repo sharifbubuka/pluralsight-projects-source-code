@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Callback Methods</title>
+    </head>
+    <body>
+        <hello-world></hello-world>
+
+
+
+
+        <script>
+            var Proto = Object.create(HTMLElement.prototype);
+
+            Proto.createdCallback = function() {
+                this.innerHTML = '<h1>Hello World</h1>';
+            }
+
+            Proto.attachedCallback = function() {
+                console.log('Attached');
+            }
+
+            var Hello = document.registerElement('hello-world', {
+                prototype: Proto
+            });
+
+        </script>
+    </body>
+</html>

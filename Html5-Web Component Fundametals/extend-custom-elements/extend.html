@@ -15,14 +15,24 @@
                 this.style.color = "orange";
             }
             
-            //registerElement() is deprecated
-           // var UserButton = document.registerElement('user-button', {
-                //prototype: Proto,
-                //extends: 'button'
-            //});
+            //registerElement() is deprecated ------ #METHOD 1
+             var UserButton = document.registerElement('user-button', {
+                prototype: Proto,
+                extends: 'button'
+            });
 
-            //Try solution below here
-            customElements.define('user-button', Proto, {extends: 'button'})
+            //------------------ #METHOD 2
+            //document.body.appendChild(new UserButton);
+
+            //------------------ #METHOD 3
+            //var button = document.createElement('button', UserButton);
+            //document.body.appendChild(button);
+
+            //----------------- #METHOD 4
+            //document.body.innerHTML = '<button is="user-button" />';
+
+            //registerElement() is deprecated. Solution is at https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
+            //customElements.define('user-button', Proto, {extends: 'button'})
         </script>
     </body>
 </html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Creating the Shadow DOM</title>
+    </head>
+    <body>
+        <!--First, create a shadow host, then create a shadow root and lastly add elements-->
+
+        <!--shadow host-->
+        <div id="host"></div>
+
+        <script>
+            var host = document.getElementById('host');
+            var root = host.createShadowRoot();
+            root.innerHTML = "<h1>Hellow world, from the shadow dom.</h1>"; //not displayed
+        </script>
+    </body>
+</html>
