@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Insertions in the Shadow DOM</title>
+    </head>
+    <body>
+        <comment-form>
+            <h1>Tell us what is on your mind!</h1>
+        </comment-form>
+
+        <template>
+            <fieldset>
+                <legend>
+                    <content select="h1"></content>
+                </legend>
+
+                <content select="p"></content>
+
+                <textarea style="width: 400px; height: 200px;"></textarea>
+                <br/>
+
+                <input type="submit" value="Submit Comment">
+
+                <content select=".footer"></content>
+            </fieldset>
+        </template>
+
+        <script>
+
+            class Comment extends HTMLElement {
+
+                super();
+
+                constructor() { 
+                    if(isConnected){
+                        connectedCallback = function(){
+                            var template = document.querySelector('template');
+                            var shadow = this.attachShadow({mode: 'open'});
+                            //var shadow = this.createShadowRoot();
+                            shadow.appendChild(document.importNode(template.content, true));
+                        }
+                    }
+                }
+            }
+            customElements.define('comment-form', Comment);
+        </script>
+
+
+    </body>
+</html>

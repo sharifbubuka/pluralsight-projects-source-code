@@ -8,7 +8,7 @@
             <p>I am coming from a template</p>
 
             <script>
-                alert('Hello Sharif')
+                alert('Hello Sharif');
             </script>
         </template>
 
@@ -16,7 +16,7 @@
             //Note: getElementByTagName() is no substitute to queraSelector() here
             var template = document.querySelector('template');
 
-            var clone = document. importNode(template.content, true);
+            var clone = document.importNode(template.content, true);
 
             document.body.appendChild(clone);
         </script>

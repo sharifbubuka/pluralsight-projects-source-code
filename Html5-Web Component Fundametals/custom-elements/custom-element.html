@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Creating a custom element</title>
+        <!--For more on custom elements, go to https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements-->
+    </head>
+    <body>
+        <hello-world>Hello John</hello-world>
+
+
+        <script>
+            class HelloWorld extends HTMLElement {
+                connectedCallback() {
+                    const name = 'Museveni';
+                    this.innerHTML = `<h2>Hey, ${name}.`;
+                }
+
+            }
+            customElements.define('hello-world', HelloWorld);
+        </script>
+    </body>
+</html>

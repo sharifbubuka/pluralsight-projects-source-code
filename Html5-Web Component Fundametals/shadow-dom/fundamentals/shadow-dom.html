@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Creating the Shadow DOM</title>
+        <style>
+            h1 {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!--First, create a shadow host, then create a shadow root and lastly add elements-->
+        <div id="host"></div> <!--shadow host, with shadow dom tree-->
+        <h1>I am from the Light DOM</h1><!--usual light dom element-->
+
+        <template>
+            <style>
+                h1 {
+                    color: green;
+                }
+            </style>
+            <h1>Hellow world, I am from the shadow dom.</h1>
+        </template>
+
+        <script>
+            var template = document.querySelector('template'); 
+            var host = document.getElementById('host'); //Get element reference
+            var root = host.attachShadow({mode: 'open'}); //Attach Shadow to the element. Mode = open / closed
+            root.appendChild(document.importNode(template.content, true));
+
+            console.log(document.querySelector('h1')); //returns only one h1 element, from the light DOM 
+            console.log(root.querySelector('h1')); //returns only one h1 element, from the shadow DOM 
+        </script>
+    </body>
+</html>
