@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "Sample project to test out how to initialize a node module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boxus"
+  ],
+  "author": "Bubuka Sharif",
+  "license": "ISC"
+}
