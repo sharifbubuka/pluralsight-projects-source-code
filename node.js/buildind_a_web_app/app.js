@@ -16,7 +16,13 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-    res.render('index', { list: ['a','b'], title: 'Library'});
+    res.render(
+        'index',
+        { 
+            nav: ['Books','Authors'], 
+            title: 'Library'
+        }
+    );
 });
 
 app.listen(port, function() {
